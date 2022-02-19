@@ -1,0 +1,20 @@
+<MyGrid>
+
+    url: url
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+
+        GridLayout:
+            cols:2
+
+
+            TextInput:
+                id: url
+                multiline:False
+
+            Button:
+                text: "Download"
+                on_press: root.btn()
