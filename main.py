@@ -22,7 +22,7 @@ def getthumbnail(url):
         print("Could not get Thumbnail")
 
 
-def exp(url="https://www.youtube.com/watch?v=l3zhOoDKVvs"):
+def downloadVideo(url="https://www.youtube.com/watch?v=l3zhOoDKVvs"):
     yt = YouTube(url)
     # Legacy Streams | With both Video and Audio | 720p and below
     yt.streams.filter(progressive=True).get_by_resolution("720p").download()
@@ -33,6 +33,6 @@ def exp(url="https://www.youtube.com/watch?v=l3zhOoDKVvs"):
 if __name__ == '__main__':
     # urltitle(input("Paste Youtube Url Here: "))
     # print_hi('PyCharm')
-    exp()
+    downloadVideo()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
