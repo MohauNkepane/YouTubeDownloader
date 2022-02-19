@@ -6,6 +6,13 @@
         cols:1
         size: root.width, root.height
 
+        Label:
+            text: "Youtube Downloader"
+            height: 80
+            size_hint: None, None
+            pos_hint:None,None
+
+
 
         GridLayout:
             cols:2
@@ -14,7 +21,17 @@
             TextInput:
                 id: url
                 multiline:False
+                size_hint: 0.9 , None
+                height: 40
+                hint_text: "Paste Url Here"
 
             Button:
+                id: submit
                 text: "Download"
                 on_press: root.btn()
+                size_hint: None, None,
+                height: 40
+        Image:
+            id: pic
+            source: "thumb.png"
+            allow_stretch: True
