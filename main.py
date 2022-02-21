@@ -12,14 +12,17 @@ def urltitle(url):
 
 
 def getthumbnail(url):
-    r = requests.get(url)
+    video = YouTube(url)
+    r = requests.get(video.thumbnail_url)
     if r.status_code == 200:
         # Extracting Picture from response
         file = open("thumb.png", "wb")
         file.write(r.content)
         file.close()
+        return True
     else:
         print("Could not get Thumbnail")
+        return False
 
 
 def downloadVideo(url="https://www.youtube.com/watch?v=l3zhOoDKVvs"):
@@ -31,8 +34,8 @@ def downloadVideo(url="https://www.youtube.com/watch?v=l3zhOoDKVvs"):
 
 
 if __name__ == '__main__':
-    # urltitle(input("Paste Youtube Url Here: "))
+    getthumbnail(input("Paste Youtube Url Here: "))
     # print_hi('PyCharm')
-    downloadVideo()
+    #downloadVideo()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
