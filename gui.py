@@ -7,7 +7,8 @@ from kivy.uix.button import Button
 from kivy.uix.widget import Widget
 from kivy.properties import ObjectProperty
 from kivy.properties import StringProperty
-from kivy.uix.image import Image
+from kivy.uix.image import AsyncImage
+
 import main
 
 
@@ -17,12 +18,19 @@ class MyGrid(GridLayout):
     def btn(self):
         btnstate = self.ids.submit.text
         url = self.ids.url.text
+        self.add_widget(AsyncImage(source=main.getthumbnailurl(url)))
+
+
+        """
+        btnstate = self.ids.submit.text
+        url = self.ids.url.text
         if (btnstate == "Preview") and (main.getthumbnail(url)):
             self.ids.submit.text = "Download"
             self.ids.pic.reload()
 
         else:
             print("To Download")
+        """
 
 
 

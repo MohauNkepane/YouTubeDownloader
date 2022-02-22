@@ -24,6 +24,10 @@ def getthumbnail(url):
         print("Could not get Thumbnail")
         return False
 
+def getthumbnailurl(url):
+    video = YouTube(url)
+    return video.thumbnail_url
+
 
 def downloadVideo(url="https://www.youtube.com/watch?v=l3zhOoDKVvs"):
     yt = YouTube(url)
