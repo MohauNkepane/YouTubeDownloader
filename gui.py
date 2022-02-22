@@ -12,13 +12,15 @@ import main
 
 
 class MyGrid(GridLayout):
-    picture = StringProperty("thumb.png")
+
 
     def btn(self):
         btnstate = self.ids.submit.text
-        if (btnstate == "Preview") and (main.getthumbnail("https://www.youtube.com/watch?v=cv7dht7pb6s")):
+        url = self.ids.url.text
+        if (btnstate == "Preview") and (main.getthumbnail(url)):
             self.ids.submit.text = "Download"
-            self.ids.pic.source = self.picture
+            self.ids.pic.reload()
+
         else:
             print("To Download")
 
